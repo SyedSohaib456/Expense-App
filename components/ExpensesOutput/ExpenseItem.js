@@ -18,7 +18,7 @@ function ExpenseItem({ id, description, date, amount }) {
       style={({ pressed }) => pressed && styles.pressed}
     >
       <View style={styles.expenseItem}>
-        <View>
+        <View style={styles.halfCtn}>
           <Text style={[styles.textBase, styles.description]}>
             {description}
           </Text>
@@ -34,11 +34,12 @@ function ExpenseItem({ id, description, date, amount }) {
 
 const styles = StyleSheet.create({
   expenseItem: {
+    flex:1,
     paddingVertical: 12,
     marginVertical: 8,
     backgroundColor: GlobalStyles.colors.primary500,
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-evenly",
     borderRadius: 6,
     elevation: 3,
     shadowColor: GlobalStyles.colors.gray500,
@@ -46,6 +47,7 @@ const styles = StyleSheet.create({
     shadowOffset: { height: 1, width: 1 },
     shadowOpacity: 0.4,
     paddingHorizontal: 10,
+    alignItems:'center'
   },
   textBase: {
     color: GlobalStyles.colors.primary50,
@@ -57,12 +59,12 @@ const styles = StyleSheet.create({
   },
   amountCtn: {
     paddingHorizontal: 12,
-    paddingVertical: 4,
+    paddingVertical: 8,
     backgroundColor: "white",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 4,
-    minWidth: 70,
+    minWidth: 40,
   },
   amount: {
     color: GlobalStyles.colors.primary500,
@@ -71,6 +73,10 @@ const styles = StyleSheet.create({
   pressed: {
     opacity: 0.75,
   },
+  halfCtn:{
+    width:'80%',
+    paddingRight:20
+  }
 });
 
 export default ExpenseItem;

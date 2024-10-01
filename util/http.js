@@ -42,7 +42,7 @@ export async function updateExpense(id, expenseData) {
         return response.data;
     } catch (error) {
         console.error("Error updating expense:", error.response ? error.response.data : error.message);
-        throw new Error("Failed to update expense.");
+        throw new Error("Failed to update expense.")
     }
 }
 
